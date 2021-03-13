@@ -14,9 +14,14 @@ const CityWeather: React.FunctionComponent<WeatherInterface> = ({ city }: Weathe
   if (!isFetching && !error && !data) return <div>City not found.</div>;
   if (data)
     return (
-      <div>
-        <h2>{data.name}</h2>
-        <p>{kelvinToCelsius(data.weather.temperature.actual)}</p>
+      <div className='cityWeatherContainer'>
+        <div>
+          <h2 className='heading2'>{data.name}</h2>
+          <div className='temperatureContainer'>
+            <p className='temperature'>{kelvinToCelsius(data.weather.temperature.actual)}</p>
+            <p className='celsius'>C</p>
+          </div>
+        </div>
         <WeatherIcon iconCode={data.weather.summary.icon} />
       </div>
     );

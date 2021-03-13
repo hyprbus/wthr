@@ -9,22 +9,23 @@ const cities = [
   { name: 'Tokyo', id: '4' },
   { name: 'Parga', id: '5' },
   { name: 'Nairobi', id: '6' },
-  { name: 'bogus city name for testing', id: '7' },
+  { name: 'Rovaniemi', id: '7' },
+  { name: 'bogus city', id: '8' },
 ];
 
 const Main: React.FunctionComponent = () => {
-  const [city, selectCity] = useState<string>('');
+  const [city, selectCity] = useState<string | undefined>(undefined);
 
   const setCity = (selectedCity: string) => {
     selectCity(selectedCity);
   };
 
   return (
-    <>
-      <h1 className='heading'>Weather App</h1>
-      <Cities cities={cities} setCity={setCity} />
+    <div className='pageContainer'>
+      <h1 className='heading1'>Weather App</h1>
+      <Cities cities={cities} setCity={setCity} selectedCity={city} />
       <Weather city={city} />
-    </>
+    </div>
   );
 };
 

@@ -1,7 +1,96 @@
+@main-color: #0b0b0b;
+@border-weight: 2px;
+@border-color: #0b0b0b;
+@accent-color: #070707;
+@bg-color: #c4b999;
+@outside-page-color: #595446;
+
 body {
-  background-color: #f0ffa7;
+  background-color: @outside-page-color;
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  color: @main-color;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.heading {
-  color: blue;
+.cityList {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cityListItem {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+}
+
+.heading1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.heading2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: @bg-color;
+  height: 100vh;
+}
+
+.cityButton {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 1rem;
+  border: @border-weight solid @border-color;
+  margin: 1rem;
+}
+
+.selected {
+  background-color: @main-color;
+  color: @bg-color;
+}
+
+.cityWeatherContainer {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}
+
+.temperatureContainer {
+  display: flex;
+  align-items: flex-start;
+}
+
+.celsius {
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.temperature {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  padding: 0;
+  margin: 0;
 }

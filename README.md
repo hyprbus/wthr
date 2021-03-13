@@ -1,11 +1,5 @@
-Käyttäjä voi valita seuraavien kaupunkien joukosta:
+# Weather App
 
-- Helsinki
-- Pariisi
-- Buenos Aires
-- Tokio
-
-lämpötila (celsius) ja sää ikonilla muutamalle eri skenaariolle
-(aurinkoista, sataa, pilvistä, sataa lunta).
-
-- Jokaisen kaupungin säällä oma linkki eli voi linkillä suoraan mennä esim. Helsingin säähän
+- install: `yarn`
+- run: `yarn start`
+- test: `yarn test`
