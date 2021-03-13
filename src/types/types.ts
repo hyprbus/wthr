@@ -1,5 +1,19 @@
+export interface CityInterface {
+  name: string;
+  id: string;
+}
+
 export type WeatherDataQueryType = {
   getCityByName: WeatherDataType;
+};
+
+export type WeatherDataType = {
+  name: string;
+  weather: {
+    summary: WeatherSummary;
+    temperature: Temperature;
+    clouds: Clouds;
+  };
 };
 
 type WeatherSummary = {
@@ -14,13 +28,4 @@ type Temperature = {
 
 type Clouds = {
   all: number;
-};
-
-export type WeatherDataType = {
-  name: string;
-  weather: {
-    summary: WeatherSummary;
-    temperature: Temperature;
-    clouds: Clouds;
-  };
 };

@@ -1,14 +1,19 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Weather from '@/components/Weather';
+import Main from '@/pages/Main';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App: React.FunctionComponent = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <h1 className='heading'>Weather App!</h1>
-      <Weather />
+      <Main />
     </QueryClientProvider>
   );
 };
