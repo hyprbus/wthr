@@ -5,19 +5,22 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "moduleResolution": "node",
-    "sourceMap": true,
-    "inlineSources": true,
+      "sourceMap": true,
+      "inlineSources": true,
       "noImplicitAny": true,
-      "module": "es6",
       "target": "es5",
       "jsx": "react",
+      "lib": ["dom", "esnext"],
+      "module": "esnext",
+      "esModuleInterop": true,
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
       "baseUrl": "src",
       "paths": { "@/*": ["*"] }
     },
     "include": [
-        "./src"
+        "./src",
+        "./jest-setup.ts"
       ],
     "exclude": [
         "node_modules",
