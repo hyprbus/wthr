@@ -1,7 +1,6 @@
 @main-color: #0b0b0b;
 @border-weight: 2px;
 @border-color: #0b0b0b;
-@accent-color: #070707;
 @bg-color: #c4b999;
 @outside-page-color: #595446;
 
@@ -93,4 +92,20 @@ body {
   font-size: 6rem;
   padding: 0;
   margin: 0;
+}
+
+@keyframes loading-indicator {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loadingIndicator {
+  animation: loading-indicator 0.2s;
 }

@@ -2,14 +2,14 @@ import React from 'react';
 import WeatherIcon from '@/components/WeatherIcon';
 import { kelvinToCelsius } from '@/utils/kelvinToCelsius';
 import { useWeather } from '@/hooks/useWeather/useWeather';
-
+import LoadingIndicator from '@/components/LoadingIndicator';
 interface WeatherInterface {
   city: string;
 }
 
 const CityWeather: React.FunctionComponent<WeatherInterface> = ({ city }: WeatherInterface) => {
   const { data, error, isFetching } = useWeather(city);
-  if (isFetching) return <div>Fetching...</div>;
+  if (isFetching) return <LoadingIndicator />;
   if (error) return <div>{error.message}</div>;
   if (!isFetching && !error && !data) return <div>City not found.</div>;
   if (data)
