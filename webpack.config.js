@@ -31,10 +31,12 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   plugins: [new webpack.HotModuleReplacementPlugin(), new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') })],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
+    historyApiFallback: true,
   },
 };
